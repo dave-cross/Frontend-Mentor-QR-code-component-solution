@@ -1,0 +1,98 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --slate-300: hsl(212, 45%, 89%);
+  --slate-500: hsl(216, 15%, 48%);
+  --slate-900: hsl(218, 44%, 22%);
+
+  --space-200: 16px;
+  --space-300: 24px;
+  --space-500: 40px;
+
+  --radius-lg: 20px;
+  --radius-sm: 10px;
+
+  --font-sansserif: "Outfit", sans-serif;
+
+  --text-preset-1: 22px;
+  --text-preset-2: 15px;
+  --line-preset-1: 120%;
+  --line-preset-2: 140%;
+  --letter-spacing-1: 0;
+  --letter-spacing-2: 0.2px;
+
+  /* --max-width: 300px; */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sansserif);
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: var(--text-preset-2);
+  line-height: var(--line-preset-2);
+  letter-spacing: var(--letter-spacing-2);
+
+  color: var(--slate-500);
+  background-color: var(--slate-300);
+}
+
+h2 {
+  color: var(--slate-900);
+  font-size: var(--text-preset-1);
+  line-height: var(--line-preset-1);
+  letter-spacing: var(--letter-spacing-1);
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+.challenge-wrapper {
+  --max-child-width: var(--max-width, 320px);
+
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 20px max(20px, calc(50% - var(--max-child-width) / 2));
+}
+
+.card {
+  --flow-space: var(--space-300);
+  background-color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: var(--space-200) var(--space-200) var(--space-500);
+  box-shadow: 0 25px 25px hsl(from black h s l / 0.0477);
+}
+
+.card__image {
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  aspect-ratio: 1/1;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.card__content {
+  padding-inline: var(--space-200);
+  text-align: center;
+
+  > * {
+    --flow-space: var(--space-200);
+  }
+}
